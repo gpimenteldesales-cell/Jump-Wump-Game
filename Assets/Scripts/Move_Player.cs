@@ -1,16 +1,27 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class Move_Player : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    Rigidbody2D physicsPlayer;
+    float speedPlayer = 15f;
+    InputAction inputMovement;
+    
+    private void OnEnable()
+    {
+        inputMovement.Enable();
+    }
+    private void OnDisable()
+    {
+        inputMovement.Disable();
+    }
     void Start()
     {
-        
+        GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
+    
